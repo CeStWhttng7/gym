@@ -11,4 +11,8 @@ export default defineConfig({
 		reactRouter(),
 		tsconfigPaths(),
 	],
+	server:
+		process.env.BASE44_PREVIEW_MODE === "1"
+			? { watch: { usePolling: true } }
+			: undefined,
 });
